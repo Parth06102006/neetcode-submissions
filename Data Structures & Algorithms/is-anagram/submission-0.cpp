@@ -1,0 +1,22 @@
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+        int m[26] = {0};
+
+        for(int i=0;i<s.size();i++){
+            m[s[i] - 'a'] += 1;
+        }
+
+        for(int i=0;i<t.size();i++){
+            m[t[i] - 'a'] -= 1;
+        }
+
+        for(int i=0;i<26;i++){
+            if(m[i] != 0){
+                return false;
+            }
+        }
+
+        return true;
+    }
+};
